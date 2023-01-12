@@ -23,7 +23,7 @@ int main()
 		{
 			if (i >= CONTACT_SIZE)
 				i = 0;
-			phonebook.fill_c(i, str);
+			phonebook.gatherContactInfo(i, str);
 			i++;
 			if (count < CONTACT_SIZE)
 				count++;
@@ -37,7 +37,7 @@ int main()
 			std::cout << "       idx| firstName|  lastName|  nickName|" << std::endl;
 			for (int j = 0; j < count; j++) {
 				std::cout << "         " << j + 1 << "|";
-				phonebook.print_cp(j);
+				phonebook.printSearchTable(j);
 				std::cout << std::endl;
 			}
 			std::cout << "chose a contact by writing its 'idx' : ";
@@ -47,7 +47,7 @@ int main()
 				std::cout << "try writing something next time" << std::endl;
 			}
 			else if (ind.length() == 1 && idx <= count && idx >= 1) {
-				phonebook.print_cnor(idx - 1);
+				phonebook.printAllContacts(idx - 1);
 			}
 			else
 				std::cout << "no such _contact with that idx !! " << std::endl;

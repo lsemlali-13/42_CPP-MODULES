@@ -5,13 +5,13 @@
 
 class Contact {
 public:
-	void set_f(std::string val);
-	void set_l(std::string val);
-	void set_n(std::string val);
-	void set_p(std::string val);
-	void set_d(std::string val);
-	void print_ci();
-	void print_nor();
+	void setFirstName(std::string val);
+	void setLastName(std::string val);
+	void setNickName(std::string val);
+	void setPhoneNumber(std::string val);
+	void setDark(std::string val);
+	void searchTable();
+	void contacts();
 private:
 	std::string _firstName;
 	std::string _lastName;

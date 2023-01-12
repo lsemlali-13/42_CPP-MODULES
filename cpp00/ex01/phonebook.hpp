@@ -6,9 +6,9 @@
 
 class PhoneBook {
 public:
-	void fill_c(int i, std::string str);
-	void print_cp(int i);
-	void print_cnor(int i);
+	void gatherContactInfo(int i, std::string str);
+	void printSearchTable(int i);
+	void printAllContacts(int i);
 private:
 	Contact _contact[CONTACT_SIZE];
 };
