@@ -1,20 +1,16 @@
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef __PHONEBOOK_HPP__
+# define __PHONEBOOK_HPP__
 
-# include <iostream>
-
-class Contact {
-	public:
-		std::string first_name;
-		std::string last_name;
-		std::string nick_name;
-		std::string phone_num;
-		std::string darket_sec;
-};
+# include "Contact.hpp"
+# define CONTACT_SIZE 3
 
 class PhoneBook {
-	public:
-		Contact* contact;
+public:
+	void fill_c(int i, std::string str);
+	void print_cp(int i);
+	void print_cnor(int i);
+private:
+	Contact _contact[CONTACT_SIZE];
 };
 
 #endif

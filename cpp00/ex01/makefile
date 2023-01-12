@@ -1,4 +1,4 @@
-SRC = phonebook.cpp
+SRC = main.cpp Phonebook.cpp Contact.cpp
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 NAME = PHONEB
