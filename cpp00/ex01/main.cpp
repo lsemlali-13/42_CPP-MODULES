@@ -2,36 +2,38 @@
 
 int main()
 {
-	std::cout << "!! THE AMAZING PHONE BOOK !!" << std::endl;
-	std::string str;
 	PhoneBook phonebook;
-	int i = 0;
+	std::string COMMAND;
 	std::string ind;
+	int i = 0;
+	int idx;
 	int count = 0;
-	long long int idx;
+
+	system("clear");
+	std::cout << GREEN << "      !! THE AMAZING PHONE BOOK !!" << RESET << std::endl << std::endl;
 	while (1) {
 		std::cout << "enter a command as follows 'ADD', 'SEARCH', 'EXIT' : ";
 		while (1) {
-			if (!(std::getline(std::cin, str)))
+			if (!(std::getline(std::cin, COMMAND)))
 				exit(0);
-			if (str.empty())
-				std::cout << "enter a command as follows 'ADD', 'SEARCH', 'EXIT' : ";
+			if (COMMAND.empty())
+				std::cout << "try writing something at least ";
 			else
 				break;
 		}
-		if (str == "ADD")
+		if (COMMAND == "ADD")
 		{
 			if (i >= CONTACT_SIZE)
 				i = 0;
-			phonebook.gatherContactInfo(i, str);
+			phonebook.gatherContactInfo(i);
 			i++;
 			if (count < CONTACT_SIZE)
 				count++;
 		}
-		else if (str == "SEARCH")
+		else if (COMMAND == "SEARCH")
 		{
 			if (i == 0) {
-				std::cout << "the Amazing Phonebook is empty try adding a contact first .\n";
+				std::cout << "the Phonebook is empty try adding a contact first .\n";
 				continue;
 			}
 			std::cout << "       idx| firstName|  lastName|  nickName|" << std::endl;
@@ -50,9 +52,9 @@ int main()
 				phonebook.printAllContacts(idx - 1);
 			}
 			else
-				std::cout << "no such _contact with that idx !! " << std::endl;
+				std::cout << "Invalid idx !! " << std::endl;
 		}
-		else if (str == "EXIT") {
+		else if (COMMAND == "EXIT") {
 			std::cout << "CONTACTS LOST !! " << std::endl;
 			exit(0);
 		}
