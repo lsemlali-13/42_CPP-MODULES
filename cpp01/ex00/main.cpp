@@ -5,5 +5,5 @@ int main()
 	Zombie* z = newZombie("zombie");
 	z->announce();
 	randomChump("foo");
-	system("leaks zombie");
+	delete (z);
 }
